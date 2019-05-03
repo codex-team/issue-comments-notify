@@ -65,7 +65,7 @@ class BotIssues:
         messages = []
         for title, author, url, dt in results:
             dt_obj = dateutil.parser.parse(dt)
-            delta = relativedelta(datetime.now(dt_obj.tzinfo), dt_obj)
+            delta = datetime.now(dt_obj.tzinfo) - dt_obj
             messages.append((delta.days, """➔ ({delta} days) {author}  <a href="{url}">{title}</a>""".format(url=url, title=html.escape(title), delta=delta.days, author=author)))
 
         if len(messages):
