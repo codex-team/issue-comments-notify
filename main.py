@@ -1,5 +1,7 @@
 import logging
 import json
+import os
+
 import yaml
 import requests
 import argparse
@@ -88,5 +90,5 @@ if __name__ == "__main__":
 
     logger = init_logger(__name__, filename=args.logs)
 
-    app = BotIssues(debug=args.debug, config=args.config)
+    app = BotIssues(debug=args.debug, config=args.config, graphql=Path(os.path.dirname(os.path.abspath(__file__))) / "static" / "query.graphql")
     app.update_all()
