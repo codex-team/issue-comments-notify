@@ -1,0 +1,22 @@
+token: '...'
+repositories:
+  editor.js:
+    owner: codex-team
+    name: editor.js
+    chat: ...
+    maintainers:
+      - 'neSpecc'
+      - 'n0str'
+      - 'gohabereg'
+      - 'khaydarov'
+      - 'talyguryn'
+  plugin-image:
+    owner: editor-js
+    name: image
+    chat: ...
+    maintainers:
+      - 'neSpecc'
+      - 'n0str'
+      - 'gohabereg'
+      - 'khaydarov'
+      - 'talyguryn'

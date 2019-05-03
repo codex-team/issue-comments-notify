@@ -1,0 +1,60 @@
+query {
+  repository(owner:"$owner", name:"$name") {
+    issues(last:100, states:OPEN) {
+      edges {
+        node {
+          title
+          url
+          labels(first:32) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          comments(last:1) {
+            edges {
+              node {
+                id
+                body
+                publishedAt
+                author {
+                  login
+                }
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+    pullRequests(last:100, states:OPEN) {
+      edges {
+        node {
+          id
+          title
+          labels(first:32) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          comments(last:1) {
+            edges {
+              node {
+                id
+                body
+                publishedAt
+                author {
+                  login
+                }
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+static/config.yaml
+*.log
+__pycache__
+.idea
