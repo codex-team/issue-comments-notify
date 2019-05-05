@@ -74,7 +74,7 @@ class BotIssues:
             messages.sort(key=lambda x: int(x[0]), reverse=True)
             message = '<b>🚨 List of unanswered issues for {}/{}</b>\n\n'.format(settings['owner'], settings['name']) + '\n'.join([m[1] for m in messages])
 
-            r = requests.post("https://notify.bot.codex.so/u/{}".format(settings['chat']), {"message": message, "parse_mode": "HTML"})
+            r = requests.post("https://notify.bot.codex.so/u/{}".format(settings['chat']), {"message": message, "parse_mode": "HTML", "disable_web_page_preview": True})
             if r.status_code != 200:
                 logger.error("Send to Codex.Bot exception", r.text)
 
