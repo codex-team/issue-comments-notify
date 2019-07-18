@@ -10,6 +10,9 @@ repositories:
       - 'gohabereg'
       - 'khaydarov'
       - 'talyguryn'
+    ignore-labels:
+      - 'freezed'
+      - 'viewed'
   plugin-image:
     owner: editor-js
     name: image
@@ -20,3 +23,6 @@ repositories:
       - 'gohabereg'
       - 'khaydarov'
       - 'talyguryn'
+    ignore-labels:
+      - 'freezed'
+      - 'viewed'
