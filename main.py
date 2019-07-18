@@ -56,9 +56,16 @@ class BotIssues:
             for issue in nature:
                 issue_node = issue['node']
                 comments = issue_node['comments']['edges']
+                labels = [label['node']['name'] for label in issue_node['labels']['edges']]
+                if any(label in settings['ignore-labels'] for label in labels):
+                    continue
 
                 if len(comments):
-                    comment_author = comments[0]['node']['author']['login']
+                    if comments[0]['node']['author'] is None:
+                        comment_author = "[deleted]"
+                    else:
+                        comment_author = comments[0]['node']['author']['login']
+
                     if comment_author not in settings['maintainers']:
                         comment_url = comments[0]['node']['url']
                         comment_date = comments[0]['node']['publishedAt']
